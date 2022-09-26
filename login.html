@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="componants/index.css" />
+    <style>
+      input {
+        background-color: rgba(0, 0, 0, 0.527);
+        height: 70%;
+        padding-left: 2%;
+        font-size: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.733);
+      }
+      #form {
+        background-color: rgba(0, 0, 0, 0.719);
+        text-align: center;
+
+        margin: auto;
+        margin-top: 3%;
+        width: 35%;
+        height: 450px;
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: repeat(3, 15%);
+        gap: 1%;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid white;
+        box-shadow: rgba(214, 202, 202, 0.35) 0px 5px 15px;
+      }
+      button {
+        background-color: black;
+        font-weight: bold;
+        font-size: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.733);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav"></div>
+    <div id="form">
+      <h1>Login</h1>
+
+      <input type="email" placeholder="Enter Email" id="email" />
+      <input type="password" placeholder="Enter Password" id="password" />
+      <button id="signup">Login</button>
+    </div>
+  </body>
+</html>
+<script type="module">
+  import { navbar } from "./componants/navbar.js";
+  import getdata from "./componants/fetch.js";
+  import { user, check_user } from "./componants/user.js";
+ 
+  document.querySelector("#nav").innerHTML = navbar();
+
+  document.querySelector("#signup").addEventListener("click", func);
+
+  function func() {
+    let email = document.querySelector("#email").value;
+    let password = document.querySelector("#password").value;
+
+    let p = new user();
+
+    let res = p.checklogin(email, password);
+
+    if (res === "true") {
+      p.changestatus(email, password);
+
+      alert("Login successful!");
+      window.location.href = "index.html";
+    } else {
+      alert("Invalid credentials!");
+    }
+    console.log(p.status);
+  }
+</script>

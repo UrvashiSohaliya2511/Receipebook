@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="componants/index.css" />
+    <title>Search Result</title>
+    <style>
+      * {
+        color: white;
+      }
+      #display {
+        margin-top: 1%;
+        padding: 2%;
+        width: 96%;
+        height: 500px;
+
+        color: white;
+        display: flex;
+        justify-content: center;
+      }
+      #display img {
+        width: 80%;
+        height: 100%;
+      }
+      h1 {
+        margin-top: 1%;
+        text-align: center;
+      }
+
+      #display > div {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(1, 490px);
+        justify-content: center;
+      }
+      #display > div > div {
+        padding-top: 1%;
+        height: 100%;
+        overflow: scroll;
+        background-color: rgba(15, 15, 15, 0.651);
+        line-height: 150%;
+      }
+
+      h2 {
+        margin-top: 2%;
+        font-size: 24px;
+        text-decoration: underline;
+      }
+      #search {
+        display: none;
+      }
+      @media all and (min-width: 300px) and (max-width: 700px) {
+        #display > div {
+          display: grid;
+          grid-template-columns: repeat(1, 100%);
+          grid-template-rows: repeat(2, auto);
+          justify-content: center;
+        }
+        #display img {
+          width: 95%;
+          height: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav"></div>
+    <h1 id="title"></h1>
+    <div id="display"></div>
+  </body>
+</html>
+<script type="module" src="serchres.js">
+
+  
+</script>

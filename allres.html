@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="componants/index.css" />
+    <title>Document</title>
+    <style>
+      #display {
+        display: grid;
+        grid-template-columns: repeat(3, 25%);
+        grid-template-rows: repeat(auto, 250px);
+        gap: 1%;
+        justify-content: space-evenly;
+        margin: auto;
+        overflow:hidden;
+        margin-top: 2%;
+        
+      }
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      button {
+        height: 5%;
+        margin-top: 1%;
+        padding: 1%;
+      }
+      #display div {
+       
+        text-align: center;
+        padding-bottom: 3%;
+        box-shadow: rgba(172, 172, 194, 0.25) 0px 6px 12px -2px, rgba(218, 210, 210, 0.3) 0px 3px 7px -3px;
+      }
+      img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav"></div>
+    <div id="display"></div>
+  </body>
+</html>
+<script type="module" src="receipes.js"></script>

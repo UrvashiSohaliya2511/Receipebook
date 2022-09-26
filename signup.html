@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="componants/index.css" />
+    <style>
+      input {
+        background-color: rgba(0, 0, 0, 0.527);
+        height: 70%;
+        padding-left: 2%;
+        font-size: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.733);
+      }
+      #form {
+        background-color: rgba(0, 0, 0, 0.719);
+        text-align: center;
+
+        margin: auto;
+        margin-top: 3%;
+        width: 35%;
+        height: 500px;
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        grid-template-rows: repeat(4, 15%);
+        gap: 1%;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid white;
+        box-shadow: rgba(214, 202, 202, 0.35) 0px 5px 15px;
+      }
+      button {
+        background-color: black;
+        font-weight: bold;
+        font-size: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.733);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav"></div>
+    <div id="form">
+      <h1>Sign Up</h1>
+      <input type="text" placeholder="Enter Name" id="name" />
+      <input type="email" placeholder="Enter Email" id="email" />
+      <input type="password" placeholder="Enter Password" id="password" />
+      <button id="signup">Sign Up</button>
+    </div>
+  </body>
+</html>
+<script type="module">
+  import { navbar } from "./componants/navbar.js";
+  import getdata from "./componants/fetch.js";
+  import { user, check_user } from "./componants/user.js";
+  let arr = JSON.parse(localStorage.getItem("user"));
+  document.querySelector("#nav").innerHTML = navbar();
+
+  document.querySelector("#signup").addEventListener("click", func);
+
+  function func() {
+    console.log("Createvbn");
+    let name = document.querySelector("#name").value;
+    let email = document.querySelector("#email").value;
+    let password = document.querySelector("#password").value;
+
+    let p = new user(name, email, password);
+
+    console.log(check_user(p));
+  }
+</script>
