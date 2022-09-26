@@ -3,7 +3,7 @@ find your favourite food recipes
 
 
 
-## try on :<a href ="https://receipebook.vercel.app/">ReciprBook</a> 
+## try on :<a href ="https://receipebook.vercel.app/">RecipeBook</a> 
 
 ## points : 
 - Daily Receipe.
