@@ -1,5 +1,6 @@
 # Receipebook
-find your favourite food recipes
+
+From here we can find daily receipe using searching functionalities  having all the details about receipe with image, ingridiants and method . 
 
 
 
